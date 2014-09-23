@@ -14,6 +14,8 @@ RUN echo 'Defaults  secure_path=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/s
 
 # install squid
 RUN yum -y install squid httpd-tools
+RUN touch /etc/squid/squid_passwd
+RUN chmod o+r /etc/squid/squid_passwd
 
 # copy custom config
 COPY squid.conf /etc/squid/squid.conf
