@@ -21,13 +21,13 @@ will pass along to the corporate proxy.
 
 ```
 docker run --net host jpetazzo/squid-in-a-can
-iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to 3129
+iptables -t nat -A PREROUTING -p tcp --dport 8427 -j REDIRECT --to 3129
 ```
 
 That's it. Now all HTTP requests going through your Docker host will be
 transparently routed through the proxy running in the container.
 
-Note: it will only affect HTTP traffic on port 80.
+Note: it will only affect HTTP traffic on port 8427.
 
 Note: traffic originating from the host will not be affected, because
 the `PREROUTING` chain is not traversed by packets originating from the
