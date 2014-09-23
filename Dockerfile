@@ -16,9 +16,7 @@ RUN echo 'Defaults  secure_path=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/s
 RUN yum -y install squid httpd-tools
 
 # copy custom config
-RUN git clone https://github.com/ciudilo/kp_squid_conf.git
-RUN cp kp_squid_conf/squid.conf /etc/squid/squid.conf
-RUN echo "http_port 3129 intercept" >> /etc/squid/squid.conf
+COPY squid.conf /etc/squid/squid.conf
 
 # start squid
 CMD [ "/usr/sbin/squid", "-N" ]

@@ -20,7 +20,7 @@ will pass along to the corporate proxy.
 ## How?
 
 ```
-docker run --net host jpetazzo/squid-in-a-can
+docker run --net host -d ciudilo/squid-in-a-can
 iptables -t nat -A PREROUTING -p tcp --dport 8427 -j REDIRECT --to 3129
 ```
 
