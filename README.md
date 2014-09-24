@@ -73,5 +73,8 @@ Ideas for improvement:
 - easy chaining to an upstream proxy
 - setup the iptables automatically if the container runs in privileged mode
 
+Digital Ocean:
+- https://www.digitalocean.com/community/tutorials/how-to-add-swap-on-centos-6
+
 
 [CVE-2009-0801]: http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0801
